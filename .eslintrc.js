@@ -6,6 +6,7 @@ module.exports = {
   ],
   rules: {
     'indent': 0,
+    'semi': 0,
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
