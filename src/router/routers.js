@@ -44,278 +44,276 @@ export default [
     ]
   },
   {
-    path: '',
-    name: 'doc',
-    meta: {
-      title: '文档',
-      href: 'https://lison16.github.io/iview-admin-doc/#/',
-      icon: 'ios-book'
-    }
-  },
-  {
-    path: '/join',
-    name: 'join',
-    component: Main,
-    children: [
-      {
-        path: 'join_page',
-        name: 'join_page',
-        meta: {
-          icon: '_qq',
-          title: 'QQ群'
-        },
-        component: () => import('@/view/join-page.vue')
-      }
-    ]
-  },
-  {
-    path: '/components',
-    name: 'components',
+    path: '/news',
+    name: 'news',
     meta: {
       icon: 'logo-buffer',
-      title: '组件'
+      title: '新闻管理'
     },
     component: Main,
     children: [
       {
-        path: 'count_to_page',
-        name: 'count_to_page',
+        path: 'list_page',
+        name: 'list_page',
         meta: {
           icon: 'md-trending-up',
-          title: '数字渐变'
+          title: '全部新闻'
         },
-        component: () => import('@/view/components/count-to/count-to.vue')
+        component: () => import('@/view/ssnews/list_page.vue')
       },
       {
-        path: 'drag_list_page',
-        name: 'drag_list_page',
-        meta: {
-          icon: 'ios-infinite',
-          title: '拖拽列表'
-        },
-        component: () => import('@/view/components/drag-list/drag-list.vue')
-      },
-      {
-        path: 'tables_page',
-        name: 'tables_page',
+        path: 'type_page',
+        name: 'type_page',
         meta: {
           icon: 'md-grid',
-          title: '多功能表格'
+          title: '新闻分类'
         },
-        component: () => import('@/view/components/tables/tables.vue')
+        component: () => import('@/view/ssnews/type_page.vue')
       },
       {
-        path: 'split_pane_page',
-        name: 'split_pane_page',
+        path: 'tags_page',
+        name: 'tags_page',
         meta: {
           icon: 'md-pause',
-          title: '分割窗口'
+          title: '新闻标签'
         },
-        component: () => import('@/view/components/split-pane/split-pane.vue')
+        component: () => import('@/view/ssnews/tags_page.vue')
       },
       {
-        path: 'markdown_page',
-        name: 'markdown_page',
+        path: 'statistics_page',
+        name: 'statistics_page',
         meta: {
-          icon: 'logo-markdown',
-          title: 'Markdown编辑器'
+          icon: 'md-pause',
+          title: '新闻统计'
         },
-        component: () => import('@/view/components/markdown/markdown.vue')
-      },
-      {
-        path: 'editor_page',
-        name: 'editor_page',
-        meta: {
-          icon: 'ios-create',
-          title: '富文本编辑器'
-        },
-        component: () => import('@/view/components/editor/editor.vue')
-      },
-      {
-        path: 'icons_page',
-        name: 'icons_page',
-        meta: {
-          icon: '_bear',
-          title: '自定义图标'
-        },
-        component: () => import('@/view/components/icons/icons.vue')
+        component: () => import('@/view/ssnews/statistics_page.vue')
       }
     ]
   },
   {
-    path: '/update',
-    name: 'update',
+    path: '/videos',
+    name: 'videos',
+    meta: {
+      icon: 'logo-buffer',
+      title: '视频管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'list_page',
+        name: 'videos_list_page',
+        meta: {
+          icon: 'md-trending-up',
+          title: '全部视频'
+        },
+        component: () => import('@/view/ssvideo/list_page.vue')
+      },
+      {
+        path: 'type_page',
+        name: 'videos_type_page',
+        meta: {
+          hide: true,
+          icon: 'ios-infinite',
+          title: '视频分类'
+        },
+        component: () => import('@/view/ssvideo/type_page.vue')
+      },
+      {
+        path: 'tags_page',
+        name: 'videos_tags_page',
+        meta: {
+          icon: 'md-grid',
+          title: '视频标签'
+        },
+        component: () => import('@/view/ssvideo/tags_page.vue')
+      },
+      {
+        path: 'statistics_page',
+        name: 'videos_statistics_page',
+        meta: {
+          icon: 'md-pause',
+          title: '视频统计'
+        },
+        component: () => import('@/view/ssvideo/statistics_page.vue')
+      }
+    ]
+  },
+  {
+    path: '/ssgoods',
+    name: 'goods',
     meta: {
       icon: 'md-cloud-upload',
-      title: '数据上传'
+      title: '商品发布'
     },
     component: Main,
     children: [
       {
-        path: 'update_table_page',
-        name: 'update_table_page',
+        path: 'list_page',
+        name: 'goods_list_page',
         meta: {
           icon: 'ios-document',
-          title: '上传Csv'
+          title: '全部商品'
         },
-        component: () => import('@/view/update/update-table.vue')
+        component: () => import('@/view/ssgoods/list_page.vue')
       },
       {
-        path: 'update_paste_page',
-        name: 'update_paste_page',
+        path: 'type_page',
+        name: 'goods_type_page',
         meta: {
           icon: 'md-clipboard',
-          title: '粘贴表格数据'
+          title: '商品分类'
         },
-        component: () => import('@/view/update/update-paste.vue')
+        component: () => import('@/view/ssgoods/type_page.vue')
+      },
+      {
+        path: 'attribute_page',
+        name: 'goods_attribute_page',
+        meta: {
+          icon: 'md-clipboard',
+          title: '商品属性'
+        },
+        component: () => import('@/view/ssgoods/attribute_page.vue')
+      },
+      {
+        path: 'statistics_page',
+        name: 'goods_statistics_page',
+        meta: {
+          icon: 'md-clipboard',
+          title: '销售统计'
+        },
+        component: () => import('@/view/ssgoods/statistics_page.vue')
       }
     ]
   },
   {
-    path: '/excel',
-    name: 'excel',
+    path: '/need',
+    name: 'need',
     meta: {
       icon: 'ios-stats',
-      title: 'EXCEL导入导出'
+      title: '用户需求'
     },
     component: Main,
     children: [
       {
-        path: 'upload-excel',
-        name: 'upload-excel',
+        path: 'list_page',
+        name: 'need_list_page',
         meta: {
           icon: 'md-add',
-          title: '导入EXCEL'
+          title: '全部需求'
         },
-        component: () => import('@/view/excel/upload-excel.vue')
+        component: () => import('@/view/ssneed/list_page.vue')
       },
       {
-        path: 'export-excel',
-        name: 'export-excel',
+        path: 'type_page',
+        name: 'need_type_page',
         meta: {
           icon: 'md-download',
-          title: '导出EXCEL'
+          title: '需求分类'
         },
-        component: () => import('@/view/excel/export-excel.vue')
+        component: () => import('@/view/ssneed/type_page.vue')
+      },
+      {
+        path: 'attribute_page',
+        name: 'need_attribute_page',
+        meta: {
+          icon: 'md-download',
+          title: '需求属性'
+        },
+        component: () => import('@/view/ssneed/attribute_page.vue')
+      },
+      {
+        path: 'statistics_page',
+        name: 'need_statistics_page',
+        meta: {
+          icon: 'md-download',
+          title: '需求报表'
+        },
+        component: () => import('@/view/ssneed/statistics_page.vue')
       }
     ]
   },
   {
-    path: '/tools_methods',
-    name: 'tools_methods',
+    path: '/user',
+    name: 'user',
     meta: {
-      hide: true
+      icon: 'ios-stats',
+      title: '会员管理'
     },
     component: Main,
     children: [
       {
-        path: 'tools_methods_page',
-        name: 'tools_methods_page',
+        path: 'list_page',
+        name: 'user_list_page',
         meta: {
-          icon: 'ios-hammer',
-          title: '工具方法'
+          icon: 'md-add',
+          title: '全部会员'
         },
-        component: () => import('@/view/tools-methods/tools-methods.vue')
+        component: () => import('@/view/ssuser/list_page.vue')
+      },
+      {
+        path: 'invitation_code_page',
+        name: 'user_invitation_code_page',
+        meta: {
+          icon: 'md-download',
+          title: '会员邀请码'
+        },
+        component: () => import('@/view/ssuser/invitation_code_page.vue')
+      },
+      {
+        path: 'recharge_page',
+        name: 'user_recharge_page',
+        meta: {
+          icon: 'md-download',
+          title: '会员财务'
+        },
+        component: () => import('@/view/ssuser/recharge_page.vue')
+      },
+      {
+        path: 'put_forward_page',
+        name: 'user_put_forward_page',
+        meta: {
+          icon: 'md-download',
+          title: '提现申请'
+        },
+        component: () => import('@/view/ssuser/put_forward_page.vue')
       }
     ]
   },
   {
-    path: '/directive',
-    name: 'directive',
+    path: '/setting',
+    name: 'setting',
     meta: {
-      hide: true
+      icon: 'ios-stats',
+      title: '系统设置'
     },
     component: Main,
     children: [
       {
-        path: 'directive_page',
-        name: 'directive_page',
+        path: 'system_info',
+        name: 'setting_system_info',
         meta: {
-          icon: 'ios-navigate',
-          title: '指令'
+          icon: 'md-add',
+          title: '基本信息设置'
         },
-        component: () => import('@/view/directive/directive.vue')
-      }
-    ]
-  },
-  {
-    path: '/multilevel',
-    name: 'multilevel',
-    meta: {
-      icon: 'md-menu',
-      title: '多级菜单'
-    },
-    component: Main,
-    children: [
-      {
-        path: 'level_2_1',
-        name: 'level_2_1',
-        meta: {
-          icon: 'md-funnel',
-          title: '二级-1'
-        },
-        component: () => import('@/view/multilevel/level-2-1.vue')
+        component: () => import('@/view/sssetting/system_info.vue')
       },
       {
-        path: 'level_2_2',
-        name: 'level_2_2',
+        path: 'email',
+        name: 'setting_email',
         meta: {
-          access: ['super_admin'],
-          icon: 'md-funnel',
-          showAlways: true,
-          title: '二级-2'
+          icon: 'md-download',
+          title: '邮件服务设置'
         },
-        component: parentView,
-        children: [
-          {
-            path: 'level_2_2_1',
-            name: 'level_2_2_1',
-            meta: {
-              icon: 'md-funnel',
-              title: '三级'
-            },
-            component: () => import('@/view/multilevel/level-2-2/level-3-1.vue')
-          }
-        ]
+        component: () => import('@/view/sssetting/email.vue')
       },
       {
-        path: 'level_2_3',
-        name: 'level_2_3',
+        path: 'administrator',
+        name: 'setting_administrator',
         meta: {
-          icon: 'md-funnel',
-          title: '二级-3'
+          icon: 'md-download',
+          title: '管理员设置'
         },
-        component: () => import('@/view/multilevel/level-2-3.vue')
-      },
-    ]
-  },
-  {
-    path: '/argu',
-    name: 'argu',
-    meta: {
-      hideInMenu: true
-    },
-    component: Main,
-    children: [
-      {
-        path: 'params/:id',
-        name: 'params',
-        meta: {
-          icon: 'md-flower',
-          title: '动态路由',
-          notCache: true
-        },
-        component: () => import('@/view/argu-page/params.vue')
-      },
-      {
-        path: 'query',
-        name: 'query',
-        meta: {
-          icon: 'md-flower',
-          title: '带参路由',
-          notCache: true
-        },
-        component: () => import('@/view/argu-page/query.vue')
+        component: () => import('@/view/sssetting/administrator.vue')
       }
     ]
   },
